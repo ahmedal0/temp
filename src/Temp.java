@@ -41,13 +41,13 @@ public class Temp {
 	
 	public static String DemoGenerator(String FirstName,String LastName,String Gender,String DateOfBirth,String TimeOfDeath,String Address) {
 		String Form = "{\r\n" + 
-				"\"firstNames \":" + "\""+FirstName+"\""+",\r\n" + 
-				"\"lastNames \": " + "\""+LastName+"\""+",\r\n" + 
-				"\"gender \":"+"\" "+Gender+"\""+",\r\n" + 
-				"\"dateOfBirth \": "+"\""+DateOfBirth+"\""+",\r\n" +
-				"\"timeOfDeath \": "+"\""+TimeOfDeath+"\""+",\r\n" + 
+				"\"firstNames\":" + "\""+FirstName+"\""+",\r\n" + 
+				"\"lastNames\": " + "\""+LastName+"\""+",\r\n" + 
+				"\"gender\":"+"\" "+Gender+"\""+",\r\n" + 
+				"\"dateOfBirth\": "+"\""+DateOfBirth+"\""+",\r\n" +
+				"\"timeOfDeath\": "+"\""+TimeOfDeath+"\""+",\r\n" + 
 				"\"address\": {      \r\n" + 
-				"\"address \": "+"\""+Address+"\""+"\r\n" + 
+				"\"address\": "+"\""+Address+"\""+"\r\n" + 
 				"}";
 		return Form;
 	}
