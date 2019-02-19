@@ -5,17 +5,17 @@ public class Temp {
 	static Random ra = new Random();
 	final static String Name = "abcdefghijklmnopqrstuvxyz";
 	final static Set<String> Names = new HashSet<String>();
-	final static String[] data = new String[100];
+	final static String[] data = new String[50];
 
 	public static void main(String[] args) throws IOException {
 
 		String FirstName,LastName,Gender,DateOfBirth,TimeOfDeath,Address;
 		String[] gender = {"Male","Female","Unknown","Other"};
-		for (int i =0;i<100 ; i++) {
+		for (int i =0;i<data.length ; i++) {
 			FirstName = RandomName();
 			LastName = RandomName();
 			Gender = gender[ra.nextInt(4)];
-			DateOfBirth = Integer.toString(ra.nextInt(30)+1)+"/" + Integer.toString(ra.nextInt(11)+1)+"/" + Integer.toString(ra.nextInt(80)+1940);
+			DateOfBirth = Integer.toString(ra.nextInt(30)+1)+"/" + Integer.toString(ra.nextInt(11)+1)+"/" + Integer.toString(ra.nextInt(60)+1959);
 			TimeOfDeath = null;
 			Address = Integer.toString(ra.nextInt(88)+4665);
 			data[i] = DemoGenerator( FirstName, LastName, Gender, DateOfBirth, TimeOfDeath, Address);
@@ -40,14 +40,12 @@ public class Temp {
 	}
 	
 	public static String DemoGenerator(String FirstName,String LastName,String Gender,String DateOfBirth,String TimeOfDeath,String Address) {
-		String Form = "{\r\n" + 
-				"\"firstNames\":" + "\""+FirstName+"\""+",\r\n" + 
-				"\"lastNames\": " + "\""+LastName+"\""+",\r\n" + 
-				"\"gender\":"+"\" "+Gender+"\""+",\r\n" + 
-				"\"dateOfBirth\": "+"\""+DateOfBirth+"\""+",\r\n" +
-				"\"timeOfDeath\": "+"\""+TimeOfDeath+"\""+",\r\n" + 
-				"\"address\": {      \r\n" + 
-				"\"address\": "+"\""+Address+"\""+"\r\n" + 
+		String Form = "{ " + 
+				"\"firstNames\":" + "\""+FirstName+"\""+"," + 
+				"\"lastNames\": " + "\""+LastName+"\""+"," + 
+				"\"gender\":"+"\" "+Gender+"\""+"," + 
+				"\"dateOfBirth\": "+"\""+DateOfBirth+"\""+"," +
+				"\"timeOfDeath\": "+"\""+TimeOfDeath+"\"" + 
 				"}";
 		return Form;
 	}
@@ -56,7 +54,7 @@ public class Temp {
 		BufferedWriter out = new BufferedWriter(new FileWriter("Names.txt"));
 
 		try {
-			out.write("[");
+			out.write("[\n");
 			for(int i=0;i<Data.length;i++) {
 				out.write(Data[i]);
 				
